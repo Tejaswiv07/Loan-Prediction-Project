@@ -8,19 +8,26 @@ Dream Housing Finance wants to automate the loan eligibility process based on cu
 
 ## Objective
 
-The objective of this project is to preprocess loan application data and prepare it for machine learning by performing:
+The objective of this project is to analyze loan application data, perform data preprocessing, and build a machine learning model to predict loan approval status.
+
+The project includes:
 
 - Data Ingestion
 - Data Understanding
 - Data Exploration
 - Data Cleaning
+- Missing Value Treatment
 - Feature Engineering
 - Encoding
 - Feature Scaling
+- Model Building
+- Model Evaluation
 
 ---
 
 ## Dataset Features
+
+The dataset contains applicant details including:
 
 - Loan_ID
 - Gender
@@ -45,6 +52,8 @@ The objective of this project is to preprocess loan application data and prepare
 - NumPy
 - Scikit-learn
 - Jupyter Notebook
+- Matplotlib
+- Seaborn
 
 ---
 
@@ -54,23 +63,91 @@ The objective of this project is to preprocess loan application data and prepare
 2. Data Understanding
 3. Data Exploration
 4. Missing Value Treatment
-5. Feature Engineering
-6. Encoding
-7. Feature Scaling
+5. Data Cleaning
+6. Feature Engineering
+7. Encoding Categorical Features
+8. Feature Scaling
+9. Train-Test Split
+10. Model Building
+11. Model Evaluation
+
+---
+
+## Data Preprocessing
+
+The following preprocessing steps were performed:
+
+- Identified and treated missing values.
+- Handled categorical variables using encoding techniques.
+- Removed unnecessary features that do not contribute to model learning.
+- Applied feature scaling to numerical variables.
 
 ---
 
 ## Feature Engineering
 
-- Created **Total_Income** using ApplicantIncome and CoapplicantIncome.
-- Created **Loan_to_Income** ratio to understand loan burden.
+Created new features to improve model performance:
+
+### Total Income
+
+Combined applicant income and co-applicant income:
+
+- Total_Income = ApplicantIncome + CoapplicantIncome
+
+### Loan-to-Income Ratio
+
+Created a feature to understand the applicant's loan burden:
+
+- Loan_to_Income = LoanAmount / Total_Income
+
+---
+
+## Machine Learning Model
+
+### Logistic Regression
+
+A Logistic Regression classification model was implemented to predict whether a loan application will be approved or rejected.
+
+### Model Performance
+
+Accuracy:
+
+- 86%
+
+### Model Evaluation Metrics
+
+The model was evaluated using:
+
+- Confusion Matrix
+- Precision
+- Recall
+- F1-score
+
+---
+
+## Key Insights
+
+- Credit History is one of the most important factors influencing loan approval decisions.
+
+- Applicant and co-applicant income together provide better information about the applicant's financial strength.
+
+- Loan-to-Income ratio helps understand the repayment burden and financial capability of applicants.
+
+- Missing values were handled appropriately based on the data type of each feature.
+
+- Feature scaling improved model performance by standardizing numerical features.
+
+- Removing irrelevant features helped reduce noise and improved model learning.
 
 ---
 
 ## Future Improvements
 
-- Train classification models such as Logistic Regression and Decision Tree.
-- Evaluate model performance using Accuracy, Precision, Recall, and F1-score.
+- Compare Logistic Regression performance with other classification algorithms such as Decision Tree, Random Forest, and XGBoost.
+
+- Perform hyperparameter tuning to improve model performance.
+
+- Deploy the trained model using a web application framework such as Streamlit or Flask.
 
 ---
 
